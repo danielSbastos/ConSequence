@@ -20,21 +20,6 @@ from consequence.node import Node
 sys.setrecursionlimit(15000)
 
 
-class DatasetPaths:
-    def __init__(self, train_csv):
-        self.train_csv = train_csv
-
-    @property
-    def validation_csv(self):
-        base, ext = os.path.splitext(self.train_csv)
-        if base.endswith('_train'):
-            candidate = base[:-6] + '_test' + ext
-            if os.path.isfile(candidate):
-                return candidate
-        candidate = base + '_test' + ext
-        return candidate if os.path.isfile(candidate) else self.train_csv
-
-
 class LoadedDataset:
     def __init__(self, data, target_class, items_to_encoding, encoding_to_items):
         self.data = data
@@ -203,8 +188,7 @@ def get_patterns(
     )
     conf.model = Model()
 
-    train_csv = resolve_dataset_csv(dataset)
-    paths = DatasetPaths(train_csv)
+    train_csv = "data/{dataset}_train.csv"
     loaded = load_encoded_dataset(train_csv)
     setup_model_targets(conf.model, loaded.target_class)
 
@@ -214,7 +198,7 @@ def get_patterns(
 
     context = ExperimentContext(
         dataset_name=dataset_name,
-        paths=paths,
+        paths=train_csv,
         items_to_encoding=loaded.items_to_encoding,
     )
 

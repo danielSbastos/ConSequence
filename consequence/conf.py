@@ -46,5 +46,3 @@ class Model:
         self.global_hard_error = None
 
 
-conf = Conf()
-model = Model()
