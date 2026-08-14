@@ -5,7 +5,7 @@ Code from the article **Constrast Slice Discovery on Sequential Data**.
 > ConSequence is a framework for contrast slice discovery, which identifies subgroups where a model performs well on one class but poorly on another. It discovers interpretable contrast slices from sequential patterns using Monte Carlo Tree Search (MCTS), enabling post hoc, model-agnostic analysis of sequential models.
 
 
-*ConSequence is heavily inspired by and extends the g[MCTSExtent algorithm proposed by Mathonat, R et al.](https://doi.org/10.1007/s10115-020-01523-7) It adapts the quality measure to tailor constrast slice discovery.*
+*ConSequence is heavily inspired by and extends the [MCTSExtent algorithm proposed by Mathonat, R et al.](https://doi.org/10.1007/s10115-020-01523-7) It adapts the quality measure to tailor constrast slice discovery.*
 
 
 Let's take a trained model that classifies handwritten 3s and 8s. It takes as a input stroke-level sequences and must predict the number. Upon analysis of the error distributions per class, we find the following graph:
