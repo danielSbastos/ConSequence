@@ -188,7 +188,7 @@ def get_patterns(
     )
     conf.model = Model()
 
-    train_csv = "data/{dataset}_train.csv"
+    train_csv = f"data/{dataset}_train.csv"
     loaded = load_encoded_dataset(train_csv)
     setup_model_targets(conf.model, loaded.target_class)
 
