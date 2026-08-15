@@ -1,6 +1,6 @@
 # ConSequence - Contrastive Sequential Slice Discovery
 
-Code from the article **Constrast Slice Discovery on Sequential Data**.
+Code from the article **Contrast Slice Discovery on Sequential Data**.
 
 > ConSequence is a framework for contrast slice discovery, which identifies subgroups where a model performs well on one class but poorly on another. It discovers interpretable contrast slices from sequential patterns using Monte Carlo Tree Search (MCTS), enabling post hoc, model-agnostic analysis of sequential models.
 
@@ -83,7 +83,7 @@ y_true -1 item_a item_b -1 item_a item_c -1 ... -2
 ## Parametrization
 
 ConSequence has four user-defined parameters:
-1. maximum gap constraint ($max\_gap$): -1 for no $max\_gap$, and 0 to inf for any value;
+1. maximum gap constraint (*max_gap*): -1 for no *max_gap*, and 0 to inf for any value;
 2. support penalty coeﬃcient $γ$: between 0 and 1
 3. similarity threshold $θ$ (theta): between 0 and 1;
 4. number of $iterations$: any number to inf.
